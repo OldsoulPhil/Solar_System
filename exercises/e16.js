@@ -5,7 +5,17 @@ import { data } from "../data/data";
 // Return example: 1902
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
+  const getGDY = data.asteroids;
+  const results = getGDY.map(function (getDiscovers) {
+    return getDiscovers;
+  }).reduce(function (result, num) {
+    result[num.discoveryYear] = (result[num.discoveryYear] || 0) + 1;
+    return result;
+  });
+  const addedResults = Object.keys(results).filter(function (getit) {
+    return results[getit] > 2;
+  });
+  return parseInt(addedResults[0]);
 }
 
 
