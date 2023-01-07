@@ -4,12 +4,8 @@ import { data } from "../data/data";
 // Return a given asteroid object of data
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
-export function getAsteroidDataByName(data, asteroidName = '624 Hektor') {
-  const getADBN = data.asteroids;
-  const results = getADBN.filter(function (getAsteroids) {
-    return getAsteroids > asteroidName;
-  });
-  return results[10];
+export function getAsteroidDataByName(data, asteroidName) {
+  return data.asteroids.filter((astroid) => astroid.name === asteroidName)[0];
 }
 
 

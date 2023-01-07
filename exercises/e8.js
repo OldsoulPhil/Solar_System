@@ -5,14 +5,9 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName = 'Triton') {
-  const findPNBM = data.planets;
-  const results = findPNBM.filter(function (filterMoons) {
-    return filterMoons.moons > moonName;
-  })
-    .map(function (getName) {
-      return getName['name'];
-    });
-  return results[0];
+  return data.planets
+    .filter((filterMoons) => filterMoons.moons > moonName)
+    .map((getName) => getName.name)[0];
 }
 
 

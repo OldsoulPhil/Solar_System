@@ -5,15 +5,9 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  const allPlanetsMC = data.planets;
-  const results = allPlanetsMC.filter(function (getMoonCount) {
-    return getMoonCount.moons;
-  }).map(function (getArray) {
-    return getArray.moonsCount;
-  }).reduce(function (sum, num) {
-    return sum + num;
-  })
-  return results;
+  return data.planets
+    .map((planet) => planet.moonsCount)
+    .reduce((acc, val) => acc + (val || 0));
 }
 
 
