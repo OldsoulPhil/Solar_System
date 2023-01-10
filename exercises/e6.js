@@ -4,7 +4,7 @@ import { data } from "../data/data";
 // Return an array with all asteroids names discovered after a given year
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-export function getAsteroidsDiscoveredAfterYear(data, year = 2000) {
+export function getAsteroidsDiscoveredAfterYear(data, year) {
   return data.asteroids
     .filter((asteroid) => asteroid.discoveryYear > year)
     .map((asteroid) => asteroid.name);

@@ -6,8 +6,7 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName = 'Triton') {
   return data.planets
-    .filter((filterMoons) => filterMoons.moons > moonName)
-    .map((getName) => getName.name)[0];
+    .find((findMoons) => findMoons.moons && findMoons.moons.includes(moonName)).name
 }
 
 
